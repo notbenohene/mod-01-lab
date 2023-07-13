@@ -9,8 +9,8 @@ const questions = [
   "Is 'dark' the opposite of 'light' ?",
   "What is the opposite of 'no' ?",
   "Is the Earth NOT a cube?",
-  "Guess how many times in a week I sweep my apartment (Hint: It's a number between 1 and 10)",
-  "Name a type of wood."
+  // "Guess how many times in a week I sweep my apartment (Hint: It's a number between 1 and 10)",
+  // "Name a type of wood."
 ];
 
 // Array to store the answers
@@ -18,6 +18,7 @@ const answers = [];
 
 // Loop to prompt the user 
 for (let i = 0; i < questions.length; i++) {
+  console.log('inside of the questions for loop')
   const answer = prompt(questions[i]);
   answers.push(answer);
 }
@@ -32,13 +33,15 @@ const correctNumber = 7;
 let attempts = 4;
 let guessedCorrectly = false;
 
-while (attempts > 0) {
-  const guess = parseInt(prompt("Guess how many times in a week I sweep my apartment? (Hint: It's a number between 1 and 10):"));
+for (let i = 0; i < attempts; i++) {
+  const guess = parseInt(prompt("Guess how many times in a week I swe)ep my apartment? (Hint: It's a number between 1 and 10):"));
 
   if (guess === correctNumber) {
     alert("Correct! I like to keep my living environment tidy 🧹 ");
     guessedCorrectly = true;
     break;
+  } else if (!guessedCorrectly) {
+    alert("Well, you tried. The correct number is " + correctNumber + ".");
   } else if (guess > correctNumber) {
     alert("Think lower! Guess again.");
   } else {
@@ -47,30 +50,25 @@ while (attempts > 0) {
   attempts--;
 }
 
-if (!guessedCorrectly) {
-  alert("Well, you tried. The correct number is " + correctNumber + ".");
-}
+
 
 // Code for wood answers
 const correctAnswers = ["oak", "mahogany", "teak", "pine", "cedar", "birch", "walnut", "apple", "hickory", "redwood"];
 let tries = 6;
 let answeredCorrectly = false;
-
-while (tries > 0) {
-  const input = prompt("Name a type of wood:");
-
+const input = prompt("Name a type of wood:");
+for (let i = 0; i < tries; i++) {
+//  input = prompt("Name a type of wood:");
   if (correctAnswers.includes(input.toLowerCase())) {
     alert("Correct! " + input + " is indeed wood");
     answeredCorrectly = true;
     break;
+  } else if (!answeredCorrectly) {
+    alert("There are several types of woods. Any of these would have worked: " + correctAnswers.join(", "));
   } else {
     alert("Not quite. Try again.");
-  }
+  } 
   tries--;
-}
-
-if (!answeredCorrectly) {
-  alert("There are several types of woods. Any of these would have worked: " + correctAnswers.join(", "));
 }
 
 // Count correct answers
