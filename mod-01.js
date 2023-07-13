@@ -160,3 +160,5 @@ for (let i = 0; i < answers.length; i++) {
 }
 
 alert("You answered " + correctCount + " questions correctly!");
+
+// Shout out to ChatGPT and James Kierstead!
