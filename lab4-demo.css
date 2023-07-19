@@ -1,0 +1,27 @@
+div {
+    height: 100px;
+    width: 200px;
+}
+
+main{
+    border: solid;
+    margin: 30px;
+    height: 1000px;
+    width: 500px;
+}
+#one {
+background-color: aqua;
+position: fixed;
+}
+
+#two {
+    background-color: aquamarine;
+}
+
+#three {
+    background-color: bisque;
+}
+
+p {
+    text-align: center;
+}
